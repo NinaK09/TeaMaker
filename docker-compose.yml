@@ -1,0 +1,29 @@
+version: '3'
+
+networks:
+  net:
+
+services:
+  tea_api:
+    build:
+      context: /main
+      dockerfile: Dockerfile
+    container_name: tea_machine
+    image: tea_machine
+    env_file:
+      - tea.env
+    networks:
+      - net
+    #ports:
+    #  - "9999:8000"
+
+  tea_front:
+    build:
+      context: /front
+      dockerfile: Dockerfile
+    container_name: tea_front
+    image: tea_front
+    networks:
+      - net
+    ports:
+      - "5000:5000"

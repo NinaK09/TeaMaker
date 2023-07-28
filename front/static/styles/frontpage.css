@@ -1,0 +1,33 @@
+.wrap{
+    align-items: center;
+    width: 40%;
+    border-style: solid;
+    height: 600px
+}
+
+.info{
+    border-style: inset;
+}
+
+#frm{
+    width: 100%;
+    height: auto;
+    overflow:auto;
+}
+
+#teaButtons{
+    display: inline-block;
+    width:49%;
+    overflow: auto;
+     float:left;
+}
+
+#funButtons{
+    display: inline-block;
+    width:40%;
+     float:left;
+     padding-left: 50px;
+}
+
+.teaType{
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Machine</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/frontpage.css') }}">
+</head>
+<body>
+    <div class = "wrap">
+        <h4>Tea Machine</h4>
+        <hr>
+        <div class="info">{{info}}</div>
+        <hr>
+        <div id="frm">
+        <div id="teaButtons">
+            <form action="/" method="POST">
+            {% for tea in teas %}
+                <button type="submit" class="teaType" name="teaServing" value={{tea}}>{{tea}}</button> <br>
+            {% endfor %}
+                <button type="submit" class="teaType" name="teaServing" value="Coffee">Coffee</button> <br>
+            </form>
+        </div>
+        <div id="funButtons">
+            <p>Dodaj herbatę</p>
+            <form action="/add" method="POST">
+                <select id="teaAdd" name="teaAdd" >
+                    {% for tea in teas %}
+                        <option class="teaType" name="tea" value={{tea}}>{{tea}}</option> <br>
+                    {% endfor %}
+                </select>
+                <input id="quantity" name="quantity"><br>
+                <button type="submit" name="teaToAdd">+</button> <br>
+            </form>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
